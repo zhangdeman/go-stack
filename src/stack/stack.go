@@ -8,15 +8,23 @@ import (
 type Stack struct {
 	size int64 //栈容量
 	used int64 //已使用容量
+	isExtend bool //栈满是否允许自动扩展
 	data [] interface{}	//栈数据
 }
 
 /**
  * 创建一个栈
+ * @param size 栈大小
+ * @param isExtend 是否允许扩展
  */
-func MakeStack(size int64) Stack {
+func MakeStack(size int64, isExtend bool) Stack {
 	data := make([]interface{}, size)
-	stack := Stack{size:size, data:data}
+	stack := Stack{
+		size:size,
+		data:data,
+		used:0,
+		isExtend:isExtend,
+	}
 	return stack
 }
 
@@ -97,8 +105,14 @@ func (stack *Stack) Pop() (interface{}, int64, error) {
  */
 func (stack *Stack) Push(data interface{}) (int64, error) {
 	if stack.IsFull() {
-		stack.size = stack.size * 2
-		fmt.Println("栈已满，无法压入数据, 自动扩容")
+		if stack.isExtend {
+			//允许扩展
+			stack.size = stack.size * 2
+			fmt.Println("栈已满，无法压入数据, 自动扩容")
+		} else {
+			//不允许扩展
+			return -1, errors.New("栈已满，定长队列不允许自动扩展")
+		}
 	}
 	afterPush := append(stack.data, data)
 	stack.data = afterPush

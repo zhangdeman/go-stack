@@ -6,6 +6,7 @@ package stack
 type Queue struct {
 	size int64 			//队列最大长度
 	used int64 			//已使用长度
+	isExtend bool		//队列长度是否允许自动扩展
 	bufferStack Stack	//缓冲数据栈(只push,不pop)
 	queueData Stack		//队列数据栈(只pop,不push)
 }
@@ -13,12 +14,13 @@ type Queue struct {
 /**
  * 创建一个队列
  */
-func MakeQueue(size int64) Queue {
+func MakeQueue(size int64, isExtend bool) Queue {
 	queue := Queue{
 		size:size,
 		used:0,
-		bufferStack:MakeStack(size),
-		queueData:MakeStack(size),
+		isExtend:isExtend,
+		bufferStack:MakeStack(size, isExtend),
+		queueData:MakeStack(size, isExtend),
 	}
 	return queue
 }
@@ -95,7 +97,7 @@ func (queue *Queue) Pop() interface{}  {
 	queue.queueData = queue.bufferStack
 	queue.used = queue.bufferStack.used
 	//清空缓冲栈
-	queue.bufferStack = MakeStack(queue.size)
+	queue.bufferStack = MakeStack(queue.size, queue.isExtend)
 
 	//队列长度减一
 	queue.used = queue.used - 1
