@@ -11,34 +11,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="stack.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/stack/stack.go">
+      <file leaf-file-name="map.go" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/hashmap/map.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="log.go" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/self_log/log.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="401">
-              <caret line="151" selection-start-line="151" selection-end-line="151" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fatal.log" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/log/fatal.log">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="Test_log.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Test_log.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+            <state relative-caret-position="554">
+              <caret line="105" column="38" selection-start-line="105" selection-start-column="38" selection-end-line="105" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -76,6 +53,7 @@
         <option value="$PROJECT_DIR$/log/fatal.log" />
         <option value="$PROJECT_DIR$/Test_log.go" />
         <option value="$PROJECT_DIR$/src/self_log/log.go" />
+        <option value="$PROJECT_DIR$/src/hashmap/map.go" />
       </list>
     </option>
   </component>
@@ -110,7 +88,13 @@
             <path>
               <item name="stack" type="b2602c69:ProjectViewProjectNode" />
               <item name="stack" type="462c0819:PsiDirectoryNode" />
-              <item name="log" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="stack" type="b2602c69:ProjectViewProjectNode" />
+              <item name="stack" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="hashmap" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="stack" type="b2602c69:ProjectViewProjectNode" />
@@ -159,7 +143,7 @@
     <frame x="4" y="22" width="1436" height="878" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.25578034" />
+      <window_info content_ui="combo" id="Project" order="1" weight="0.25578034" />
       <window_info anchor="bottom" id="TODO" order="10" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
       <window_info anchor="right" id="Database" order="0" />
@@ -238,13 +222,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/stack/stack.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/self_log/config.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
@@ -287,10 +264,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Test_log.go">
+    <entry file="file://$PROJECT_DIR$/src/self_log/log.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+        <state relative-caret-position="273">
+          <caret line="145" lean-forward="true" selection-start-line="145" selection-end-line="145" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/stack/stack.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
@@ -300,10 +284,17 @@
         <state relative-caret-position="-36764" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/self_log/log.go">
+    <entry file="file://$PROJECT_DIR$/Test_log.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="151" selection-start-line="151" selection-end-line="151" />
+        <state relative-caret-position="216">
+          <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hashmap/map.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="554">
+          <caret line="105" column="38" selection-start-line="105" selection-start-column="38" selection-end-line="105" selection-end-column="38" />
         </state>
       </provider>
     </entry>
