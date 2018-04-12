@@ -1,5 +1,7 @@
 package stack
 
+import "errors"
+
 /**
  * 双栈模拟队列
  */
@@ -72,24 +74,24 @@ func (queue *Queue) Push(data interface{}) int64 {
  * 弹出队列中的数据
  * @return interface 弹出的数据
  */
-func (queue *Queue) Pop() interface{}  {
+func (queue *Queue) Pop() (interface{}, error)  {
 	if queue.IsEmpty() {
 		//队列为空
-		return nil
+		return nil, errors.New("队列为空")
 	}
 
 	isQueueDataEmpty := queue.queueData.IsEmpty()
 	if !isQueueDataEmpty {
 		//队列数据不为空
 		data, _, _ := queue.queueData.Pop()
-		return data
+		return data, nil
 	}
 
 	//队列数据为空时
 	isBufferEmpty := queue.bufferStack.IsEmpty()
 	if isBufferEmpty {
 		//缓冲数据为空
-		return nil
+		return nil, errors.New("队列数据为空")
 	}
 
 	//缓冲数据不为空,将缓冲数据全部刷新至队列
@@ -104,5 +106,5 @@ func (queue *Queue) Pop() interface{}  {
 
 	//取出数据
 	data, _, _ := queue.queueData.Pop()
-	return data
+	return data, nil
 }
