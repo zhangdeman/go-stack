@@ -31,9 +31,9 @@ func MakeQueue(size int64, isExtend bool) Queue {
  */
 func (queue *Queue) IsEmpty() bool {
 	if !queue.queueData.IsEmpty() || !queue.bufferStack.IsEmpty() {
-		return true
+		return false
 	}
-	return false
+	return true
 }
 
 /**

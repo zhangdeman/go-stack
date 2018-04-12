@@ -21,7 +21,7 @@ func MakeStack(size int64, isExtend bool) Stack {
 	data := make([]interface{}, size)
 	stack := Stack{
 		size:size,
-		data:data,
+		data:data[0:1],
 		used:0,
 		isExtend:isExtend,
 	}
@@ -148,10 +148,12 @@ func (stack *Stack) GetIndexValue(index int64, data interface{}) (interface{}, e
  * @return slice
  */
 func (stack *Stack) ReversalStack() []interface{} {
+	fmt.Println(stack.data)
 	stackLen := len(stack.data)
-	reversalStack := make([]interface{}, stackLen)
-	for index := stackLen; index > 0; index-- {
+	reversalStack := make([]interface{}, 1)
+	for index := stackLen - 1; index > 0; index-- {
 		reversalStack = append(reversalStack, stack.data[index])
 	}
+	fmt.Println(reversalStack)
 	return reversalStack
 }
