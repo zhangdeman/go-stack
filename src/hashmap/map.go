@@ -2,7 +2,6 @@ package hashmap
 
 import (
 	"errors"
-	"fmt"
 )
 
 /**
@@ -45,7 +44,6 @@ func (hashMap *HashMap) GetMapLength() int64 {
  */
 func (hashMap *HashMap) GetMapValue(key string) (interface{},int64, error)  {
 	index, ok := hashMap.keyList[key]
-	fmt.Println("是否存在", ok)
 	if !ok {
 		//不存在
 		return nil, -1, errors.New(key + " 索引不存在")
@@ -111,7 +109,7 @@ func (hashMap *HashMap) Delete(key string) []MapType {
 	}
 
 	//3) 删除最后一条数据
-	hashMap.data = hashMap.data[0:len]
+	hashMap.data = hashMap.data[0:len - 1]
 	return hashMap.GetAllData()
 }
 
