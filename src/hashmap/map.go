@@ -1,6 +1,9 @@
 package hashmap
 
-import "errors"
+import (
+	"errors"
+	"fmt"
+)
 
 /**
  * map数据结构
@@ -23,8 +26,10 @@ type HashMap struct {
  * 创建一个hashmap
  */
 func MakeHashMap() HashMap {
-	data := make([]MapType, 32)
-	hashMap := HashMap{data:data}
+	keyList := make(map[string]int64)
+	hashMap := HashMap{
+		keyList:keyList,
+	}
 	return hashMap
 }
 
@@ -40,6 +45,7 @@ func (hashMap *HashMap) GetMapLength() int64 {
  */
 func (hashMap *HashMap) GetMapValue(key string) (interface{},int64, error)  {
 	index, ok := hashMap.keyList[key]
+	fmt.Println("是否存在", ok)
 	if !ok {
 		//不存在
 		return nil, -1, errors.New(key + " 索引不存在")
@@ -65,6 +71,8 @@ func (hashMap *HashMap) Add(key string, value interface{}) int64 {
 			value:value,
 		}
 		hashMap.data = append(hashMap.data, data)
+		//维护keyList
+		hashMap.keyList[key] = len
 		return len + 1
 	}
 
