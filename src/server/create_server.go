@@ -77,6 +77,14 @@ func (newServer *NewServer) RunServer() {
 
 }
 
+func (newServer *NewServer) ValidateRequestIp() {
+
+}
+
+func (newServer *NewServer) ValidateRequestMethod() {
+
+}
+
 /**
  * 创建服务器
  */
